@@ -144,6 +144,10 @@ func entryToProtoKey(entry *Entry) (*tinkpb.Keyset_Key, error) {
 	}, nil
 }
 
+func EntryToProtoKey(entry *Entry) (*tinkpb.Keyset_Key, error) {
+	return entryToProtoKey(entry)
+}
+
 func entriesToProtoKeyset(entries []*Entry) (*tinkpb.Keyset, error) {
 	if entries == nil {
 		return nil, fmt.Errorf("entriesToProtoKeyset called with nil")
